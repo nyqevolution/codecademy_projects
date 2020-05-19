@@ -23,8 +23,8 @@ def censor_email_two(email, banned_words):
 #print(censor_email_two(email_two, censor_list))
 
 
-#censoring a list of words while also replacing other 'negative' words
-negative_words = ["concerned", "behind", "danger", "dangerous", "alarming", "alarmed", "out of control", "help", "unhappy", "bad", "upset", "awful", "broken", "damage", "damaging", "dismal", "distressed", "distressed", "concerning", "horrible", "horribly", "questionable"]
+#censoring a list of words while also replacing other 'negative' words. I can't get it to work.
+negative_words = ["concerned", "behind", "danger", "dangerous", "alarming", "alarmed", "out of control", "help", "unhappy", "bad", "upset", "awful", "broken", "damage", "damaging", "dismal", "distressed", "distressing", "concerning", "horrible", "horribly", "questionable"]
 
 def censor_email_three(email, banned_words, negative_words):
     email = email.lower()
@@ -34,8 +34,16 @@ def censor_email_three(email, banned_words, negative_words):
             count += 1
             if count > 2:
                 email = email.replace(word, "*" * len(word))
-    for word in banned_words:
-        email = email.replace(word, "*" * len(word))
     return email
+#print(censor_email_three(email_four, censor_list, negative_words))
 
-print(censor_email_three(email_three, censor_list, negative_words))
+
+#same as above, but censoring one word before and after targeted words. This time I have to use list methods to censor.
+
+def censor_email_four(email, banned_words, negative_words):
+    email = censor_email_three(email, banned_words, negative_words)
+    censored_email = []
+    for x in email.split(" "):
+        x1 = x.split("\n")
+    return x1
+#print(censor_email_four(email_four, censor_list, negative_words))

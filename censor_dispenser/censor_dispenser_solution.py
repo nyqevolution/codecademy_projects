@@ -29,7 +29,7 @@ def censor_two(input_text, censored_list):
   return input_text
 
 # print(censor_two(email_two, proprietary_terms))
-
+punctuation = [",", "!", "?", ".", "%", "/", "(", ")"]
 negative_words = ["concerned", "behind", "danger", "dangerous", "alarming", "alarmed", "out of control", "help", "unhappy", "bad", "upset", "awful", "broken", "damage", "damaging", "dismal", "distressed", "distressed", "concerning", "horrible", "horribly", "questionable"]
 
 def censor_three(input_text, censored_list, negative_words):
@@ -59,7 +59,7 @@ def censor_three(input_text, censored_list, negative_words):
           input_text_words[i] = input_text_words[i].replace(word_clean, censored_word)
   return " ".join(input_text_words)
 
-# print(censor_three(email_three, proprietary_terms, negative_words))
+print(censor_three(email_three, proprietary_terms, negative_words))
 
 punctuation = [",", "!", "?", ".", "%", "/", "(", ")"]
 
